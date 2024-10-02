@@ -1,0 +1,158 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #FFB6C1 0%, #F7F7E9 50%, #F0E68C 100%); /* Baby pink to lime yellow */
+    margin: 0;
+    padding: 0 17%; /* Adjust for side images */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+
+.container {
+    width: 60%;
+    max-width: 800px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 0 auto; /* Center the container */
+}
+
+header {
+    background: linear-gradient(135deg, #4a90e2, #43cea2, #f1e767);
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.chat-container {
+    padding: 20px;
+}
+
+.chat-box {
+    height: 400px;
+    overflow-y: auto;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-image: url('/static/background.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.chat-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    filter: blur(5px);
+    z-index: -1;
+}
+
+.user-message, .bot-message {
+    margin: 10px 0;
+    padding: 10px 15px;
+    border-radius: 20px;
+    max-width: 80%;
+    word-wrap: break-word;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1;
+}
+
+.user-message {
+    color: #1565c0;
+    margin-left: auto;
+}
+
+.bot-message {
+    color: #6a1b9a;
+}
+
+.input-area {
+    display: flex;
+}
+
+input[type="text"] {
+    flex-grow: 1;
+    border: 1px solid #e0e0e0;
+    border-radius: 25px;
+    padding: 12px 20px;
+    font-size: 16px;
+    outline: none;
+}
+
+button {
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 25px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #3a78c2;
+}
+
+.emotion-images {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 15%; /* Adjust this value to control the width of the image columns */
+}
+
+.emotion-images.left {
+    left: 20px;
+}
+
+.emotion-images.right {
+    right: 20px;
+}
+
+.emotion-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.emotion-images img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1; /* This ensures the images are square */
+    object-fit: cover;
+    border-radius: 10px; /* Slightly rounded corners for a modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.emotion-label {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+}
